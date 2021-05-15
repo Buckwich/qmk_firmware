@@ -587,7 +587,15 @@ enum quantum_keycodes {
 
     // always leave at the end
     SAFE_RANGE
+
 };
+#define STRINGIFY(s) XSTRINGIFY(s)
+#define XSTRINGIFY(s) #s
+
+#define ADEFINE 23
+#pragma message ("ADEFINE=" STRINGIFY(ADEFINE))
+#define SR SAFE_RANGE
+#pragma message ("ADEFINE=" STRINGIFY(SR))
 
 // Ability to use mods in layouts
 #define LCTL(kc) (QK_LCTL | (kc))

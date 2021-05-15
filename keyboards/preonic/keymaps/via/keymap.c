@@ -29,6 +29,8 @@ enum preonic_keycodes {
   BACKLIT
 };
 
+#pragma message(SAFE_RANGE)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Qwerty
