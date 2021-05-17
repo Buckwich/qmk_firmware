@@ -19,8 +19,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID       0xFEED
-#define PRODUCT_ID      0x0000
+#define VENDOR_ID       0x534B  // SK = Split KB
+#define PRODUCT_ID      0x4B79  // Ky = Kyria
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    splitkb
 #define PRODUCT         Kyria Keyboard
