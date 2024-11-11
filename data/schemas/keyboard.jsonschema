@@ -33,7 +33,10 @@
         }
     },
     "type": "object",
-    "not": {"required": ["vendorId", "productId"]}, // reject via keys...
+    "not": {
+        "$comment": "reject via keys...",
+        "required": ["vendorId", "productId"]
+    },
     "properties": {
         "keyboard_name": {"$ref": "qmk.definitions.v1#/text_identifier"},
         "keyboard_folder": {"$ref": "qmk.definitions.v1#/keyboard"},
@@ -351,7 +354,7 @@
                 "axis_resolution": {"$ref": "qmk.definitions.v1#/unsigned_int"},
                 "axes": {
                     "type": "object",
-                    "propertyNames": {"enum": ["x", "y", "z", "rx", "ry", "rz"]}
+                    "propertyNames": {"enum": ["x", "y", "z", "rx", "ry", "rz"]},
                     "additionalProperties": {
                         "oneOf": [
                             {
