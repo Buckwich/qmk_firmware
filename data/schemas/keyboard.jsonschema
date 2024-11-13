@@ -8,20 +8,14 @@
             "properties": {
                 "driver": {
                     "type": "string",
-                    "enum": [
-                        "custom",
-                        "quadrature"
-                    ]
+                    "enum": ["custom", "quadrature"]
                 },
                 "rotary": {
                     "type": "array",
                     "items": {
                         "type": "object",
                         "additionalProperties": false,
-                        "required": [
-                            "pin_a",
-                            "pin_b"
-                        ],
+                        "required": ["pin_a", "pin_b"],
                         "properties": {
                             "pin_a": {
                                 "$ref": "qmk.definitions.v1#/mcu_pin",
@@ -54,18 +48,13 @@
     "type": "object",
     "not": {
         "$comment": "reject via keys...",
-        "required": [
-            "vendorId",
-            "productId"
-        ]
+        "required": ["vendorId", "productId"]
     },
     "properties": {
         "keyboard_name": {
             "$ref": "qmk.definitions.v1#/text_identifier",
             "description": "A free-form text string describing the keyboard. This will be used as the USB product string. Can include Unicode characters, escaped to ASCII eg. `\\u03A8` (Ψ).",
-            "examples": [
-                "Clueboard 66%"
-            ]
+            "examples": ["Clueboard 66%"]
         },
         "keyboard_folder": {
             "$ref": "qmk.definitions.v1#/keyboard"
@@ -73,24 +62,18 @@
         "maintainer": {
             "$ref": "qmk.definitions.v1#/text_identifier",
             "description": "GitHub username of the maintainer, or `qmk` for community maintained boards.",
-            "examples": [
-                "skullydazed"
-            ]
+            "examples": ["skullydazed"]
         },
         "manufacturer": {
             "$ref": "qmk.definitions.v1#/text_identifier",
             "description": "A free-form text string describing the keyboard's manufacturer. This will be used as the USB manufacturer string. Can include Unicode characters, escaped to ASCII eg. `\\u03A8` (Ψ).",
-            "examples": [
-                "Clueboard"
-            ]
+            "examples": ["Clueboard"]
         },
         "url": {
             "type": "string",
             "format": "uri",
             "description": "A URL to the keyboard's product page, [QMK.fm/keyboards](https://qmk.fm/keyboards) page, or other page describing information about the keyboard.",
-            "examples": [
-                "https://clueboard.co"
-            ]
+            "examples": ["https://clueboard.co"]
         },
         "development_board": {
             "type": "string",
@@ -114,16 +97,11 @@
                 "imera"
             ],
             "description": "The microcontroller development board, if applicable.",
-            "examples": [
-                "promicro"
-            ]
+            "examples": ["promicro"]
         },
         "pin_compatible": {
             "type": "string",
-            "enum": [
-                "promicro",
-                "elite_c"
-            ],
+            "enum": ["promicro", "elite_c"],
             "description": "The form factor of the development board, if applicable. Must be one of `elite_c`, `promicro`."
         },
         "processor": {
@@ -272,12 +250,7 @@
             "properties": {
                 "driver": {
                     "type": "string",
-                    "enum": [
-                        "custom",
-                        "pwm",
-                        "software",
-                        "timer"
-                    ],
+                    "enum": ["custom", "pwm", "software", "timer"],
                     "default": "pwm",
                     "description": "The driver to use. Must be one of `custom`, `pwm`, `software`, `timer`."
                 },
@@ -350,11 +323,7 @@
             "properties": {
                 "driver": {
                     "type": "string",
-                    "enum": [
-                        "bluefruit_le",
-                        "custom",
-                        "rn42"
-                    ],
+                    "enum": ["bluefruit_le", "custom", "rn42"],
                     "description": "The driver to use. Must be one of `custom`, `bluefruit_le`, `rn42`."
                 }
             }
@@ -376,10 +345,7 @@
                         "type": "integer",
                         "minimum": 0
                     },
-                    "default": [
-                        0,
-                        0
-                    ],
+                    "default": [0, 0],
                     "description": "The matrix position of the key to check during startup. This should generally be set to the (physically) top left key."
                 }
             }
@@ -389,9 +355,7 @@
             "minLength": 2,
             "pattern": "^[a-zA-Z_][0-9a-zA-Z_]*$",
             "description": "Override the default ChibiOS board name (ARM-based keyboards only).",
-            "examples": [
-                "BLACKPILL_STM32_F411"
-            ]
+            "examples": ["BLACKPILL_STM32_F411"]
         },
         "bootloader": {
             "type": "string",
@@ -423,9 +387,7 @@
         "bootloader_instructions": {
             "type": "string",
             "description": "Instructions for putting the keyboard into a mode that allows for firmware flashing.",
-            "examples": [
-                "Press the button marked RESET on the back of the PCB"
-            ]
+            "examples": ["Press the button marked RESET on the back of the PCB"]
         },
         "build": {
             "type": "object",
@@ -446,11 +408,7 @@
                 },
                 "firmware_format": {
                     "type": "string",
-                    "enum": [
-                        "bin",
-                        "hex",
-                        "uf2"
-                    ],
+                    "enum": ["bin", "hex", "uf2"],
                     "description": "The format of the final output binary. Must be one of `bin`, `hex`, `uf2`."
                 },
                 "lto": {
@@ -462,10 +420,7 @@
         },
         "diode_direction": {
             "type": "string",
-            "enum": [
-                "COL2ROW",
-                "ROW2COL"
-            ],
+            "enum": ["COL2ROW", "ROW2COL"],
             "description": "Which way the diodes are \"pointing\". Unused for `matrix_pins.direct`. Must be one of `COL2ROW`, `ROW2COL`."
         },
         "debounce": {
@@ -523,12 +478,7 @@
                 "$ref": "qmk.definitions.v1#/filename"
             },
             "description": "A list of community layouts supported by the keyboard.",
-            "examples": [
-                [
-                    "60_ansi",
-                    "60_iso"
-                ]
-            ]
+            "examples": [["60_ansi", "60_iso"]]
         },
         "dip_switch": {
             "$ref": "#/definitions/dip_switch_config",
@@ -553,18 +503,9 @@
                     "description": "A list of matrix locations in the key matrix.",
                     "examples": [
                         [
-                            [
-                                0,
-                                6
-                            ],
-                            [
-                                1,
-                                6
-                            ],
-                            [
-                                2,
-                                6
-                            ]
+                            [0, 6],
+                            [1, 6],
+                            [2, 6]
                         ]
                     ]
                 },
@@ -621,9 +562,7 @@
                 "$ref": "qmk.definitions.v1#/snake_case"
             },
             "not": {
-                "required": [
-                    "lto"
-                ]
+                "required": ["lto"]
             },
             "description": "A dictionary of features to enable or disable.",
             "examples": [
@@ -681,14 +620,7 @@
                 "axes": {
                     "type": "object",
                     "propertyNames": {
-                        "enum": [
-                            "x",
-                            "y",
-                            "z",
-                            "rx",
-                            "ry",
-                            "rz"
-                        ]
+                        "enum": ["x", "y", "z", "rx", "ry", "rz"]
                     },
                     "additionalProperties": {
                         "oneOf": [
@@ -711,9 +643,7 @@
                             },
                             {
                                 "type": "string",
-                                "enum": [
-                                    "virtual"
-                                ]
+                                "enum": ["virtual"]
                             }
                         ]
                     }
@@ -759,10 +689,7 @@
                         "items": {
                             "type": "object",
                             "additionalProperties": false,
-                            "required": [
-                                "x",
-                                "y"
-                            ],
+                            "required": ["x", "y"],
                             "properties": {
                                 "encoder": {
                                     "$ref": "qmk.definitions.v1#/unsigned_int",
@@ -771,9 +698,7 @@
                                 "label": {
                                     "type": "string",
                                     "pattern": "^[^\\n]*$",
-                                    "examples": [
-                                        "Escape"
-                                    ],
+                                    "examples": ["Escape"],
                                     "description": "What to name the key. This is *not* a key assignment as in the keymap, but should usually correspond to the keycode for the first layer of the default keymap."
                                 },
                                 "matrix": {
@@ -784,9 +709,7 @@
                                         "type": "integer",
                                         "minimum": 0
                                     },
-                                    "examples": [
-                                        "`[0, 4]` (row 0, column 4)"
-                                    ],
+                                    "examples": ["`[0, 4]` (row 0, column 4)"],
                                     "description": "The matrix position for the key."
                                 },
                                 "r": {
@@ -832,10 +755,7 @@
             "properties": {
                 "driver": {
                     "type": "string",
-                    "enum": [
-                        "drv2605l",
-                        "solenoid"
-                    ]
+                    "enum": ["drv2605l", "solenoid"]
                 }
             }
         },
@@ -896,45 +816,21 @@
                     "description": "A 2-dimensional list of GPIO pins connected to each keyswitch, forming the \"matrix\" rows and columns.",
                     "examples": [
                         [
-                            [
-                                "A0",
-                                "A1",
-                                "A2"
-                            ],
-                            [
-                                "B0",
-                                "B1",
-                                "B2"
-                            ],
-                            [
-                                "C0",
-                                "C1",
-                                "C2"
-                            ]
+                            ["A0", "A1", "A2"],
+                            ["B0", "B1", "B2"],
+                            ["C0", "C1", "C2"]
                         ]
                     ]
                 },
                 "cols": {
                     "$ref": "qmk.definitions.v1#/mcu_pin_array",
                     "description": "A list of GPIO pins connected to the matrix columns.",
-                    "examples": [
-                        [
-                            "A0",
-                            "A1",
-                            "A2"
-                        ]
-                    ]
+                    "examples": [["A0", "A1", "A2"]]
                 },
                 "rows": {
                     "$ref": "qmk.definitions.v1#/mcu_pin_array",
                     "description": "A list of GPIO pins connected to the matrix rows.",
-                    "examples": [
-                        [
-                            "B0",
-                            "B1",
-                            "B2"
-                        ]
-                    ]
+                    "examples": [["B0", "B1", "B2"]]
                 }
             }
         },
@@ -1049,10 +945,7 @@
                     "items": {
                         "$ref": "qmk.definitions.v1#/unsigned_int_8"
                     },
-                    "default": [
-                        112,
-                        32
-                    ],
+                    "default": [112, 32],
                     "description": "The centroid (geometric center) of the LEDs. Used for certain effects."
                 },
                 "max_brightness": {
@@ -1103,12 +996,7 @@
                         "$ref": "qmk.definitions.v1#/unsigned_int"
                     },
                     "description": "For split keyboards, the number of LEDs on each half.",
-                    "examples": [
-                        [
-                            16,
-                            16
-                        ]
-                    ]
+                    "examples": [[16, 16]]
                 },
                 "layout": {
                     "type": "array",
@@ -1225,10 +1113,7 @@
                     "items": {
                         "$ref": "qmk.definitions.v1#/unsigned_int_8"
                     },
-                    "default": [
-                        112,
-                        32
-                    ],
+                    "default": [112, 32],
                     "description": "The centroid (geometric center) of the LEDs. Used for certain effects."
                 },
                 "max_brightness": {
@@ -1289,12 +1174,7 @@
                         "$ref": "qmk.definitions.v1#/unsigned_int"
                     },
                     "description": "For split keyboards, the number of LEDs on each half.",
-                    "examples": [
-                        [
-                            16,
-                            16
-                        ]
-                    ]
+                    "examples": [[16, 16]]
                 },
                 "layout": {
                     "type": "array",
@@ -1390,11 +1270,7 @@
                 },
                 "driver": {
                     "type": "string",
-                    "enum": [
-                        "apa102",
-                        "custom",
-                        "ws2812"
-                    ],
+                    "enum": ["apa102", "custom", "ws2812"],
                     "default": "ws2812",
                     "description": "The driver to use. Must be one of `apa102`, `custom`, `ws2812`."
                 },
@@ -1440,15 +1316,7 @@
                         "$ref": "qmk.definitions.v1#/unsigned_int"
                     },
                     "description": "Remap LED indices.",
-                    "examples": [
-                        [
-                            4,
-                            3,
-                            2,
-                            1,
-                            0
-                        ]
-                    ]
+                    "examples": [[4, 3, 2, 1, 0]]
                 },
                 "max_brightness": {
                     "$ref": "qmk.definitions.v1#/unsigned_int_8",
@@ -1486,12 +1354,7 @@
                         "$ref": "qmk.definitions.v1#/unsigned_int"
                     },
                     "description": "When `rgblight.split` is enabled, the number of LEDs on each half.",
-                    "examples": [
-                        [
-                            10,
-                            10
-                        ]
-                    ]
+                    "examples": [[10, 10]]
                 }
             }
         },
@@ -1530,18 +1393,9 @@
                     "description": "A list of up to five matrix locations comprising the \"unlock sequence\".",
                     "examples": [
                         [
-                            [
-                                0,
-                                0
-                            ],
-                            [
-                                0,
-                                1
-                            ],
-                            [
-                                4,
-                                3
-                            ]
+                            [0, 0],
+                            [0, 1],
+                            [4, 3]
                         ]
                     ]
                 }
@@ -1558,11 +1412,7 @@
                 },
                 "protocol": {
                     "type": "string",
-                    "enum": [
-                        "all",
-                        "geminipr",
-                        "txbolt"
-                    ],
+                    "enum": ["all", "geminipr", "txbolt"],
                     "default": "all",
                     "description": "The Steno protocol to use. Must be one of `all`, `geminipr`, `txbolt`."
                 }
@@ -1592,12 +1442,7 @@
                 },
                 "driver": {
                     "type": "string",
-                    "enum": [
-                        "busywait",
-                        "interrupt",
-                        "usart",
-                        "vendor"
-                    ],
+                    "enum": ["busywait", "interrupt", "usart", "vendor"],
                     "default": "busywait",
                     "description": "The PS/2 driver to use. Must be one of `busywait`, `interrupt`, `usart`, `vendor`."
                 }
@@ -1685,12 +1530,7 @@
                             "minItems": 2,
                             "maxItems": 2,
                             "description": "The GPIO pins of the matrix position which determines the handedness.",
-                            "examples": [
-                                [
-                                    "A1",
-                                    "B5"
-                                ]
-                            ]
+                            "examples": [["A1", "B5"]]
                         }
                     }
                 },
@@ -1711,11 +1551,7 @@
                     "properties": {
                         "driver": {
                             "type": "string",
-                            "enum": [
-                                "bitbang",
-                                "usart",
-                                "vendor"
-                            ],
+                            "enum": ["bitbang", "usart", "vendor"],
                             "default": "bitbang",
                             "description": "The driver to use. Must be one of `bitbang`, `usart`, `vendor`."
                         },
@@ -1731,11 +1567,7 @@
                     "properties": {
                         "protocol": {
                             "type": "string",
-                            "enum": [
-                                "custom",
-                                "i2c",
-                                "serial"
-                            ],
+                            "enum": ["custom", "i2c", "serial"],
                             "description": "The split transport protocol to use. Must be one of `custom`, `i2c`, `serial`."
                         },
                         "sync": {
@@ -1835,13 +1667,7 @@
                 },
                 "main": {
                     "type": "string",
-                    "enum": [
-                        "eeprom",
-                        "left",
-                        "matrix_grid",
-                        "pin",
-                        "right"
-                    ],
+                    "enum": ["eeprom", "left", "matrix_grid", "pin", "right"],
                     "$comment": "Deprecated: use config.h options for now"
                 },
                 "matrix_grid": {
@@ -1859,13 +1685,7 @@
                 "type": "string"
             },
             "description": "A list of tags describing the keyboard.",
-            "examples": [
-                [
-                    "ortho",
-                    "split",
-                    "rgb"
-                ]
-            ]
+            "examples": [["ortho", "split", "rgb"]]
         },
         "tapping": {
             "type": "object",
@@ -1928,9 +1748,7 @@
                 "device_version": {
                     "$ref": "qmk.definitions.v1#/bcd_version",
                     "description": "A BCD version number in the format `MM.m.r` (up to `99.9.9`).",
-                    "examples": [
-                        "1.0.0"
-                    ]
+                    "examples": ["1.0.0"]
                 },
                 "force_nkro": {
                     "type": "boolean",
@@ -1940,16 +1758,12 @@
                 "pid": {
                     "$ref": "qmk.definitions.v1#/hex_number_4d",
                     "description": "The USB product ID as a four-digit hexadecimal number.",
-                    "examples": [
-                        "0x23B0"
-                    ]
+                    "examples": ["0x23B0"]
                 },
                 "vid": {
                     "$ref": "qmk.definitions.v1#/hex_number_4d",
                     "description": "The USB vendor ID as a four-digit hexadecimal number.",
-                    "examples": [
-                        "0xC1ED"
-                    ]
+                    "examples": ["0xC1ED"]
                 },
                 "max_power": {
                     "$ref": "qmk.definitions.v1#/unsigned_int",
